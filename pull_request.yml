@@ -1,0 +1,21 @@
+name: Pull Request
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Installation
+      - name: install
+        run: npm ci
+
+      - name: lint
+        run: |
+          npm run lint
