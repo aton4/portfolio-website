@@ -1,7 +1,14 @@
 import React from 'react'
+import About from '../About'
+import Contact from '../Contact'
 
 function Home() {
-  return <p>This is the home page</p>
+  return (
+    <home>
+      <About />
+      <Contact />
+    </home>
+  )
 }
 
 export default Home
