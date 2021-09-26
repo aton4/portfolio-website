@@ -1,52 +1,97 @@
 import * as React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
 import { CssBaseline } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import { Link } from 'react-router-dom'
-import geoBackground from '../../images/geoBackground.jpg'
+import { useHistory, Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
-  navlinks: {
-    fontSize: '20px',
+  root: {
+    backgroundColor: '#2d3748',
+    position: 'sticky',
+    zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: 0,
   },
-  link: {
-    marginLeft: '20px',
+  navBar: {
+    width: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+  },
+  aboutLink: {
+    fontWeight: 500,
+    color: 'white',
+    margin: '1rem 0.5rem 1rem 3rem',
+    float: 'left',
+    fontSize: '1.25rem',
     textDecoration: 'none',
-    color: '#344feb',
+  },
+  fragmentContainer: {
+    display: 'inline-flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '1.3rem 0.5rem 1rem 1rem',
+    borderColor: '#4a5568',
+    borderBottomLeftRadius: '100',
+    borderLeft: '1',
+    float: 'left',
+  },
+  fragmentLink: {
+    fontSize: '0.9rem',
+    color: '#cccccc',
+    textDecoration: 'none',
+    marginRight: '1.25rem',
     '&:hover': {
-      color: 'purple',
+      color: 'white',
+    },
+  },
+  documentsLink: {
+    display: 'inline-flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '0.9rem',
+    color: '#cccccc',
+    margin: '1.3rem 0.5rem 1rem 1rem',
+    float: 'right',
+    textDecoration: 'none',
+    '&:hover': {
+      color: 'white',
     },
   },
 }))
-
+// <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
 function NavBar() {
   const classes = useStyles()
+  const history = useHistory()
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <header className={classes.root}>
       <CssBaseline />
-      <div style={{ backgroundImage: `url(${geoBackground})`, backgroundSize: 'cover' }}>
-        <AppBar position="static" style={{ width: '100%', height: '50px', background: 'transparent' }}>
-          <Toolbar>
-            <Typography variant="h6" component="div" color="#344feb" sx={{ flexGrow: 1 }}>
-              Andrew Ton
-            </Typography>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/documents" className={classes.link}>
-              Documents
-            </Link>
-            <Link to="/contact" className={classes.link}>
-              Contact
-            </Link>
-          </Toolbar>
-        </AppBar>
+      <div className={classes.navBar}>
+        <text onClick={() => history.push('/#about')} className={classes.aboutLink}>
+          Andrew Ton
+        </text>
+        <nav className={classes.fragmentContainer}>
+          <text onClick={() => history.push('/#work')} className={classes.fragmentLink}>
+            Past Work
+          </text>
+          <text onClick={() => history.push('/#skills')} className={classes.fragmentLink}>
+            Skills
+          </text>
+          <text onClick={() => history.push('/#contact')} className={classes.fragmentLink}>
+            Contact
+          </text>
+        </nav>
+        <Link to="/documents" className={classes.documentsLink}>
+          Documents
+        </Link>
       </div>
-    </Box>
+    </header>
   )
 }
 
