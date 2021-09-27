@@ -61,21 +61,21 @@ function NavBar() {
     <header className={classes.root}>
       <CssBaseline />
       <div className={classes.navBar}>
-        <text onClick={() => history.push('/#about')} className={classes.aboutLink}>
+        <text onClick={() => history.push('/portfolio-website/#about')} className={classes.aboutLink}>
           Andrew Ton
         </text>
         <nav className={classes.fragmentContainer}>
-          <text onClick={() => history.push('/#work')} className={classes.fragmentLink}>
+          <text onClick={() => history.push('/portfolio-website/#work')} className={classes.fragmentLink}>
             Past Work
           </text>
-          <text onClick={() => history.push('/#skills')} className={classes.fragmentLink}>
+          <text onClick={() => history.push('/portfolio-website/#skills')} className={classes.fragmentLink}>
             Skills
           </text>
-          <text onClick={() => history.push('/#contact')} className={classes.fragmentLink}>
+          <text onClick={() => history.push('/portfolio-website/#contact')} className={classes.fragmentLink}>
             Contact
           </text>
         </nav>
-        <Link to="/documents" className={classes.documentsLink}>
+        <Link to="/portfolio-website/documents" className={classes.documentsLink}>
           Documents
         </Link>
       </div>
