@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contactFragmentLink: {
     display: 'inline-flex',
-    padding: '5px 5px 5px 5px',
+    padding: '5px 15px 5px 15px',
     borderRadius: '0.25rem',
     textDecoration: 'none',
     backgroundColor: '#48bb78',
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   workFragmentLink: {
     display: 'inline-flex',
     margin: '0px 0px 0px 15px',
-    padding: '5px 5px 5px 5px',
+    padding: '5px 15px 5px 15px',
     backgroundColor: '#2d3748',
     color: '#cbd5e0',
     borderRadius: '0.25rem',
