@@ -1,6 +1,6 @@
 import React from 'react'
-import About from '../About'
-import Contact from '../Contact'
+import About from './about'
+import Contact from './contact'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
