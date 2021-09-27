@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     margin: '1rem 0.9rem 1rem 3rem',
     float: 'left',
-    fontSize: '1.25rem',
+    fontSize: '1.85rem',
     textDecoration: 'none',
   },
   fragmentContainer: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
   },
   fragmentLink: {
-    fontSize: '0.9rem',
+    fontSize: '1.5rem',
     color: '#cccccc',
     textDecoration: 'none',
     marginRight: '1.25rem',
@@ -41,8 +41,9 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     display: 'inline-flex',
     flexWrap: 'wrap',
+    margin: '0px 20px 0px 0px',
     alignContent: 'center',
-    fontSize: '0.9rem',
+    fontSize: '1.5rem',
     color: '#cccccc',
     float: 'right',
     textDecoration: 'none',
