@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { Code } from '@mui/icons-material'
 
@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Projects() {
   const classes = useStyles()
+  const [projectDescription, setProjectDescription] = useState('Click on a project on the left to view more details.')
   const projects = [1, 2, 3, 4]
 
   return (
@@ -63,13 +64,17 @@ function Projects() {
         <div className={classes.introduction}>
           <Code className={classes.codeIcon} sx={{ fontSize: 100 }} />
           <h1 className={classes.introductionTitle}>Apps I've Built</h1>
-          <p className={classes.introductionDescription}>Projects description</p>
+          <p className={classes.introductionDescription}>
+            These are the various web applications that I've created so far mainly using React and Node.js
+          </p>
         </div>
         <div className={classes.projectsContainer}>
-          <text className={classes.projectDescription}>single project description</text>
+          <text className={classes.projectDescription}>{projectDescription}</text>
           <div className={classes.viewProjects}>
             {projects.map((project) => (
-              <text> test </text>
+              <div onClick={() => setProjectDescription('asd')}>
+                <text> test </text>
+              </div>
             ))}
           </div>
         </div>
