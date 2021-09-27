@@ -4,14 +4,16 @@ import portfolioPhoto from '../../images/portfolioPhoto.jpg'
 
 const useStyles = makeStyles((theme) => ({
   about: {
+    width: '100%',
     backgroundColor: '#1a202c',
-    display: 'flex',
+    display: 'table',
   },
   summary: {
     display: 'flex',
     flexDirection: 'column',
     margin: '75px 10px 75px 50px',
     justifyContent: 'center',
+    float: 'left',
   },
   introduction: {
     display: 'flex',
@@ -53,14 +55,11 @@ const useStyles = makeStyles((theme) => ({
   },
   photoContainer: {
     display: 'flex',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    justifyItems: 'center',
+    margin: '50px 300px 20px 0px',
+    float: 'right',
   },
   photo: {
     display: 'flex',
-    margin: '20px 50px 0px 300px',
     borderRadius: '5rem',
   },
 }))
@@ -90,7 +89,7 @@ function About() {
           </links>
         </summary>
         <div className={classes.photoContainer}>
-          <img alt="photo" className={classes.photo} src={portfolioPhoto} />
+          <img alt="profilePic" className={classes.photo} src={portfolioPhoto} />
         </div>
       </div>
     </section>
