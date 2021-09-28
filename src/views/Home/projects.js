@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { Code } from '@mui/icons-material'
+import { projects } from './projectsData'
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -39,9 +40,26 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     color: '#444',
   },
-  projectDescription: {
-    color: '#444',
+  singleProjectContainer: {
+    display: 'flex',
+    width: '100%',
     textAlign: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    justifyItems: 'center',
+  },
+  singleProjectDetails: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+  projectDescription: {
+    textAlign: 'center',
+    color: '#cbd5e0',
+    fontSize: '1.5rem',
+    lineHeight: 1.625,
   },
   viewProjects: {
     display: 'grid',
@@ -51,29 +69,34 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     justifyItems: 'center',
   },
+  link: {
+    display: 'flex',
+  },
 }))
 
 function Projects() {
   const classes = useStyles()
   const [projectDescription, setProjectDescription] = useState('Click on a project on the left to view more details.')
-  const projects = [1, 2, 3, 4]
 
   return (
     <section id="projects" className={classes.section}>
       <div className={classes.projects}>
         <div className={classes.introduction}>
           <Code className={classes.codeIcon} sx={{ fontSize: 100 }} />
-          <h1 className={classes.introductionTitle}>Apps I've Built</h1>
-          <p className={classes.introductionDescription}>
+          <text className={classes.introductionTitle}>Apps I've Built</text>
+          <text className={classes.introductionDescription}>
             These are the various web applications that I've created so far mainly using React and Node.js
-          </p>
+          </text>
         </div>
         <div className={classes.projectsContainer}>
           <text className={classes.projectDescription}>{projectDescription}</text>
           <div className={classes.viewProjects}>
             {projects.map((project) => (
-              <div onClick={() => setProjectDescription('asd')}>
-                <text> test </text>
+              <div className={classes.singleProjectContainer} onClick={() => setProjectDescription(project.description)}>
+                <div className={classes.singleProjectDetails}>
+                  <text>{project.title}</text>
+                  <a href={project.link}>{project.linkType === 'GitHub' ? 'GitHub Link' : 'Website Link'}</a>
+                </div>
               </div>
             ))}
           </div>
