@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
-import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import { Code } from '@mui/icons-material'
 import { projects } from './projectsData'
-import ArdentHQ from '../../images/ArdentHQ.png'
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -34,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '1rem',
   },
   introductionDescription: {
-    margin: '30px 0px 100px 0px',
+    margin: '10px 0px 100px 0px',
     lineHeight: 1.625,
     fontSize: '1.5rem',
   },
@@ -60,7 +58,22 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     justifyContent: 'center',
   },
+  projectData: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  projectTitle: {
+    textAlign: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    justifyItems: 'center',
+    color: 'white',
+    fontSize: '2.5rem',
+    lineHeight: 1.625,
+  },
   projectDescription: {
+    margin: '30px 10px 0px 10px',
     textAlign: 'center',
     alignContent: 'center',
     alignItems: 'center',
@@ -91,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       '&>a': {
         color: 'green',
+        opacity: 0.5,
       },
     },
   },
@@ -100,6 +114,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       '&>a': {
         color: 'green',
+        opacity: 0.5,
       },
     },
   },
@@ -130,7 +145,10 @@ const styles = {
 
 function Projects() {
   const classes = useStyles()
-  const [projectDescription, setProjectDescription] = useState('Click on a project on the left to view more details.')
+  const [projectData, setProjectData] = useState({
+    title: 'Project Details',
+    description: 'Click on a project on the left to view more details.',
+  })
 
   return (
     <section id="projects" className={classes.section}>
@@ -153,22 +171,21 @@ function Projects() {
           }}
         >
           <Grid item xs={5} className={classes.item}>
-            <text className={classes.projectDescription}>{projectDescription}</text>
+            <div className={classes.projectData}>
+              <text className={classes.projectTitle}>{projectData.title}</text>
+              <text className={classes.projectDescription}>{projectData.description}</text>
+            </div>
           </Grid>
-          <Grid item xs={6} className={classes.item}>
-            <Grid
-              container
-              spacing={4}
-              rowSpacing={5}
-              columnSpacing={{ xs: 15, sm: 35, md: 5 }}
-              style={{
-                fontFamily: 'Old Newspaper',
-                marginLeft: '4px',
-                marginRight: '4px',
-              }}
-            >
+          <Grid item xs={7} className={classes.item}>
+            <Grid container gap={7}>
               {projects.map((project) => (
-                <Grid item xs={6} className={classes.item2} style={{ backgroundImage: `url(${project.image})` }} />
+                <Grid
+                  item
+                  xs={5}
+                  className={classes.item2}
+                  style={{ backgroundImage: `url(${project.image})` }}
+                  onClick={() => setProjectData({ title: project.title, description: project.description })}
+                />
               ))}
             </Grid>
           </Grid>
@@ -178,40 +195,6 @@ function Projects() {
   )
 }
 
-//     backgroundImage: `url(${ArdentHQ})`,
-{
-  /* <div className={classes.projectsContainer}>
-  <text className={classes.projectDescription}>{projectDescription}</text>
-  <div className={classes.viewProjects}>
-    {projects.map((project) => (
-      <Card
-        style={{ ...styles.paperContainer, backgroundImage: `url(${project.image})` }}
-        onClick={() => setProjectDescription(project.description)}
-      >
-        <div className={classes.singleProjectDetails}>
-          <text>{project.title}</text>
-          <a href={project.link}>{project.linkType === 'GitHub' ? 'GitHub Link' : 'Website Link'}</a>
-        </div>
-      </Card>
-    ))}
-  </div>
-</div> */
-}
 // https://stackoverflow.com/questions/64721468/having-trouble-creating-onhover-on-grid-item-component-materialui
 // https://stackoverflow.com/questions/63539865/spacing-in-material-ui-grid-not-working-as-expected
 export default Projects
-
-{/* <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-  <Grid item xs={6}>
-    aqwe
-  </Grid>
-  <Grid item xs={6}>
-    4535
-  </Grid>
-  <Grid item xs={6}>
-    sada
-  </Grid>
-  <Grid item xs={6}>
-    bvb
-  </Grid>
-</Grid> */}
