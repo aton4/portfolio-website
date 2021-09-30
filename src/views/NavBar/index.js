@@ -1,15 +1,9 @@
 import * as React from 'react'
-import { CssBaseline } from '@mui/material'
+import { CssBaseline, AppBar, Toolbar } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { useHistory, Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: '#2d3748',
-    position: 'sticky',
-    zIndex: 10,
-    display: 'flex',
-  },
   navBar: {
     width: '100%',
     flexDirection: 'column',
@@ -23,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   },
   fragmentContainer: {
+    flexGrow: 1,
     height: '100%',
     display: 'inline-flex',
     flexWrap: 'wrap',
@@ -58,28 +53,30 @@ function NavBar() {
   const history = useHistory()
 
   return (
-    <header className={classes.root}>
+    <navigationBar>
       <CssBaseline />
-      <div className={classes.navBar}>
-        <text onClick={() => history.push('/portfolio-website/#about')} className={classes.aboutLink}>
-          Andrew Ton
-        </text>
-        <nav className={classes.fragmentContainer}>
-          <text onClick={() => history.push('/portfolio-website/#work')} className={classes.fragmentLink}>
-            Past Work
+      <AppBar position="sticky">
+        <Toolbar>
+          <text onClick={() => history.push('/portfolio-website/#about')} className={classes.aboutLink}>
+            Andrew Ton
           </text>
-          <text onClick={() => history.push('/portfolio-website/#skills')} className={classes.fragmentLink}>
-            Skills
-          </text>
-          <text onClick={() => history.push('/portfolio-website/#contact')} className={classes.fragmentLink}>
-            Contact
-          </text>
-        </nav>
-        <Link to="/portfolio-website/documents" className={classes.documentsLink}>
-          Documents
-        </Link>
-      </div>
-    </header>
+          <nav className={classes.fragmentContainer}>
+            <text onClick={() => history.push('/portfolio-website/#work')} className={classes.fragmentLink}>
+              Past Work
+            </text>
+            <text onClick={() => history.push('/portfolio-website/#skills')} className={classes.fragmentLink}>
+              Skills
+            </text>
+            <text onClick={() => history.push('/portfolio-website/#contact')} className={classes.fragmentLink}>
+              Contact
+            </text>
+          </nav>
+          <Link to="/portfolio-website/documents" className={classes.documentsLink}>
+            Documents
+          </Link>
+        </Toolbar>
+      </AppBar>
+    </navigationBar>
   )
 }
 

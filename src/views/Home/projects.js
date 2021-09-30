@@ -120,29 +120,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-// singleProjectDetails: {
-//   display: 'flex',
-//   flexDirection: 'column',
-//   alignContent: 'center',
-//   justifyContent: 'center',
-// },
-
-const styles = {
-  paperContainer: {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
-    textAlign: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    justifyItems: 'center',
-    opacity: 0.5,
-    backgroundColor: 'transparent',
-    '&:hover': { transform: 'scale3d(1.05, 1.05, 1)', opacity: 1 },
-  },
-}
-
 function Projects() {
   const classes = useStyles()
   const [projectData, setProjectData] = useState({
@@ -195,6 +172,4 @@ function Projects() {
   )
 }
 
-// https://stackoverflow.com/questions/64721468/having-trouble-creating-onhover-on-grid-item-component-materialui
-// https://stackoverflow.com/questions/63539865/spacing-in-material-ui-grid-not-working-as-expected
 export default Projects
