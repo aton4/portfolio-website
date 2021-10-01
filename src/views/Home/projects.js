@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   introductionTitle: {
     color: 'white',
-    fontSize: '2rem',
+    fontSize: '3rem',
     fontWeight: 500,
     marginBottom: '1rem',
   },
