@@ -1,6 +1,7 @@
 import React from 'react'
 import About from './about'
 import Projects from './projects'
+import Skills from './skills'
 import Contact from './contact'
 import { makeStyles } from '@mui/styles'
 
@@ -18,6 +19,7 @@ function Home() {
     <home className={classes.root}>
       <About />
       <Projects />
+      <Skills />
       <Contact />
     </home>
   )
