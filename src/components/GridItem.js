@@ -9,10 +9,11 @@ function GridItem(props) {
         display: 'grid',
         p: 1,
         borderRadius: 1,
-        justifyContent: 'center',
+        justifyContent: 'left',
         fontSize: 19,
         fontWeight: '700',
         width: '100%',
+        bgcolor: '#2d3748',
         ...sx,
       }}
       {...other}
