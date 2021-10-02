@@ -1,15 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
+import { Box } from '@mui/material/'
 import portfolioPhoto from '../../images/portfolioPhoto.jpg'
 
 const useStyles = makeStyles((theme) => ({
-  about: {
-    width: '100%',
-    backgroundColor: '#1a202c',
-    display: 'table',
-  },
   summary: {
-    width: '50%',
     margin: '100px 0px 0px 200px',
     justifyContent: 'center',
     float: 'left',
@@ -60,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
   },
   photo: {
+    objectFit: 'cover',
     margin: '100px 300px 0px 0px',
     borderRadius: '5rem',
   },
@@ -70,7 +66,16 @@ function About() {
 
   return (
     <section id="about">
-      <div className={classes.about}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 5,
+          textAlign: 'center',
+          alignItems: 'center',
+          backgroundColor: '#1a202c',
+        }}
+      >
         <summary className={classes.summary}>
           <text className={classes.introduction}>
             Hi, I'm Andrew Ton.
@@ -96,7 +101,7 @@ function About() {
         <div className={classes.photoContainer}>
           <img alt="profilePic" className={classes.photo} src={portfolioPhoto} />
         </div>
-      </div>
+      </Box>
     </section>
   )
 }
