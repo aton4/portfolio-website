@@ -12,7 +12,17 @@ function Skills() {
         <Typography variant="h3" pt={20} pb={10} sx={{ color: 'white', textAlign: 'center' }}>
           Skills & Technologies
         </Typography>
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 5, textAlign: 'center', alignItems: 'center' }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: 5,
+            width: '50%',
+            margin: '0 auto 0 auto',
+            textAlign: 'center',
+            alignItems: 'center',
+          }}
+        >
           {skills.map((skill) => (
             <GridItem>
               <Box
@@ -21,10 +31,8 @@ function Skills() {
                   alignContent: 'center',
                   alignItems: 'center',
                   justifyItems: 'left',
-                  width: '700px',
                   borderRadius: '0.25rem',
                   display: 'flex',
-                  bgcolor: '#2d3748',
                 }}
               >
                 <CheckCircle sx={{ color: '#66ff66' }} />
