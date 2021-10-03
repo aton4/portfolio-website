@@ -14,13 +14,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'left',
     justifyItems: 'left',
   },
-  formLabel: {
-    justifyContent: 'left',
-    justifyItems: 'left',
+  formText: {
+    color: 'white',
   },
-  formInput: {
-    display: 'block',
-    width: '100%',
+  forma: {
+    color: 'white',
   },
 }))
 
@@ -28,12 +26,15 @@ function Contact() {
   const classes = useStyles()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
     console.log(name, email)
-    // You should see email and password in console.
-    // ..code to submit form to backend here...
+  }
+
+  function handleEmailChange(event) {
+    event.preventDefault()
   }
 
   return (
@@ -50,26 +51,61 @@ function Contact() {
         }}
       >
         <Map />
-        <Box sx={{ display: 'grid', justifyItems: 'left' }}>
-          <Typography variant="body" sx={{ color: 'white', textAlign: 'center' }}>
+        <Box component="form" sx={{ display: 'grid', justifyItems: 'left' }} onSubmit={handleSubmit}>
+          <Typography variant="h3" sx={{ paddingBottom: 0.3, color: 'white', textAlign: 'center' }}>
+            Contact Me
+          </Typography>
+          <Typography variant="h5" sx={{ paddingBottom: 3, color: '#cbd5e0', textAlign: 'center' }}>
+            Send an compose a message to my email, aton4@uci.edu, below!
+          </Typography>
+          <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }}>
             Name
           </Typography>
           <TextField
             variant="filled"
-            sx={{ backgroundColor: '#2d3748', borderRadius: '0.25rem' }}
+            color="secondary"
+            inputProps={{ style: { fontSize: 20, color: 'white' } }}
+            sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setName(e.target.value)}
+            onKeyPress={(e) => {
+              e.key === 'Enter' && e.preventDefault()
+            }}
             fullWidth
           />
-          <Typography variant="body" sx={{ color: 'white', textAlign: 'center' }}>
+          <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }} onChange={handleEmailChange}>
             Email
           </Typography>
           <TextField
             variant="filled"
-            sx={{ backgroundColor: '#2d3748', borderRadius: '0.25rem' }}
+            mb={5}
+            color="secondary"
+            inputProps={{ style: { fontSize: 20, color: 'white' } }}
+            sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setEmail(e.target.value)}
+            onKeyPress={(e) => {
+              e.key === 'Enter' && e.preventDefault()
+            }}
             fullWidth
           />
-          <Button type="submit">Login</Button>
+          <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }}>
+            Message
+          </Typography>
+          <TextField
+            variant="filled"
+            mb={5}
+            color="secondary"
+            inputProps={{ style: { fontSize: 20, color: 'white' } }}
+            sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
+            onInput={(e) => setMessage(e.target.value)}
+            onChange={handleEmailChange}
+            onKeyPress={(e) => {
+              e.key === 'Enter' && e.preventDefault()
+            }}
+            fullWidth
+          />
+          <Button sx={{ fontSize: 20, backgroundColor: '#48bb78', color: 'primary', justifySelf: 'center' }} type="submit">
+            Send
+          </Button>
         </Box>
       </Box>
     </section>
