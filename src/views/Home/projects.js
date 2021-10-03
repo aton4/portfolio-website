@@ -132,10 +132,10 @@ function Projects() {
       <div className={classes.projects}>
         <div className={classes.introduction}>
           <Code className={classes.codeIcon} sx={{ fontSize: 100 }} />
-          <text className={classes.introductionTitle}>Apps I've Built</text>
-          <text className={classes.introductionDescription}>
+          <div className={classes.introductionTitle}>Apps I've Built</div>
+          <div className={classes.introductionDescription}>
             These are the various web applications that I've created so far, mainly using React and Node.js
-          </text>
+          </div>
         </div>
         <Grid
           container
@@ -149,8 +149,8 @@ function Projects() {
         >
           <Grid item xs={5} className={classes.item}>
             <div className={classes.projectData}>
-              <text className={classes.projectTitle}>{projectData.title}</text>
-              <text className={classes.projectDescription}>{projectData.description}</text>
+              <div className={classes.projectTitle}>{projectData.title}</div>
+              <div className={classes.projectDescription}>{projectData.description}</div>
             </div>
           </Grid>
           <Grid item xs={7} className={classes.item}>

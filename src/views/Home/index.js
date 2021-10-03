@@ -16,12 +16,12 @@ function Home() {
   const classes = useStyles()
 
   return (
-    <home className={classes.root}>
+    <span className={classes.root}>
       <About />
       <Projects />
       <Skills />
       <Contact />
-    </home>
+    </span>
   )
 }
 
