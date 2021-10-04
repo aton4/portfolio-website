@@ -60,7 +60,13 @@ function NavBar() {
           <Typography
             variant="h4"
             sx={{ margin: '1rem 0.9rem 1rem 3rem' }}
-            onClick={() => history.push('/portfolio-website/#about')}
+            onClick={() => {
+              new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve(history.push('/portfolio-website/'))
+                }, 100)
+              }).then(() => (window.location.hash = '#about'))
+            }}
             className={classes.aboutLink}
           >
             Andrew Ton
@@ -69,7 +75,13 @@ function NavBar() {
             <Typography
               variant="h5"
               sx={{ marginRight: '1.25rem' }}
-              onClick={() => history.push('/portfolio-website/#projects')}
+              onClick={() => {
+                new Promise((resolve) => {
+                  setTimeout(() => {
+                    resolve(history.push('/portfolio-website/'))
+                  }, 100)
+                }).then(() => (window.location.hash = '#projects'))
+              }}
               className={classes.fragmentLink}
             >
               Past Work
@@ -77,7 +89,13 @@ function NavBar() {
             <Typography
               variant="h5"
               sx={{ marginRight: '1.25rem' }}
-              onClick={() => history.push('/portfolio-website/#skills')}
+              onClick={() => {
+                new Promise((resolve) => {
+                  setTimeout(() => {
+                    resolve(history.push('/portfolio-website/'))
+                  }, 100)
+                }).then(() => (window.location.hash = '#skills'))
+              }}
               className={classes.fragmentLink}
             >
               Skills
@@ -85,7 +103,13 @@ function NavBar() {
             <Typography
               variant="h5"
               sx={{ marginRight: '1.25rem' }}
-              onClick={() => history.push('/portfolio-website/#contact')}
+              onClick={() => {
+                new Promise((resolve) => {
+                  setTimeout(() => {
+                    resolve(history.push('/portfolio-website/'))
+                  }, 100)
+                }).then(() => (window.location.hash = '#contact'))
+              }}
               className={classes.fragmentLink}
             >
               Contact
