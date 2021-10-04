@@ -75,7 +75,7 @@ function Contact() {
             Contact Me
           </Typography>
           <Typography variant="h5" sx={{ paddingBottom: 3, color: '#cbd5e0', textAlign: 'center' }}>
-            Send an compose a message to my email, aton4@uci.edu, below!
+            Send a message to my email, aton4@uci.edu, below!
           </Typography>
           <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }}>
             Name (optional)
