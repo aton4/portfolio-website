@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import Map from '../../components/Map'
 import { Box, Button, TextField, Typography } from '@mui/material/'
+import validator from 'validator'
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -26,11 +27,29 @@ function Contact() {
   const classes = useStyles()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState('')
   const [message, setMessage] = useState('')
+  const [messageError, setMessageError] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
-    console.log(name, email)
+    let validEmail = true
+    let validMessage = true
+
+    if (email.trim() === '') {
+      validEmail = false
+      setEmailError('Missing email field.')
+    } else if (!validator.isEmail(email)) {
+      validEmail = false
+      setEmailError('Invalid email format.')
+    }
+    if (message.trim() === '') {
+      validMessage = false
+      setMessageError('Empty message, please write a message.')
+    }
+
+    if (validEmail) setEmailError('')
+    if (validMessage) setMessageError('')
   }
 
   function handleEmailChange(event) {
@@ -59,7 +78,7 @@ function Contact() {
             Send an compose a message to my email, aton4@uci.edu, below!
           </Typography>
           <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }}>
-            Name
+            Name (optional)
           </Typography>
           <TextField
             variant="filled"
@@ -77,6 +96,8 @@ function Contact() {
           </Typography>
           <TextField
             variant="filled"
+            error={emailError !== '' ? true : false}
+            helperText={emailError}
             mb={5}
             color="secondary"
             inputProps={{ style: { fontSize: 20, color: 'white' } }}
@@ -92,12 +113,13 @@ function Contact() {
           </Typography>
           <TextField
             variant="filled"
+            error={messageError !== '' ? true : false}
+            helperText={messageError}
             mb={5}
             color="secondary"
             inputProps={{ style: { fontSize: 20, color: 'white' } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setMessage(e.target.value)}
-            onChange={handleEmailChange}
             onKeyPress={(e) => {
               e.key === 'Enter' && e.preventDefault()
             }}
