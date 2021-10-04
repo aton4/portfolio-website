@@ -93,7 +93,7 @@ function About() {
             <a href="#contact" className={classes.contactFragmentLink}>
               Contact Me
             </a>
-            <a href="#work" className={classes.workFragmentLink}>
+            <a href="#projects" className={classes.workFragmentLink}>
               View My Past Work
             </a>
           </links>

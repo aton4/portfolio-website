@@ -61,7 +61,7 @@ function NavBar() {
             Andrew Ton
           </text>
           <nav className={classes.fragmentContainer}>
-            <text onClick={() => history.push('/portfolio-website/#work')} className={classes.fragmentLink}>
+            <text onClick={() => history.push('/portfolio-website/#projects')} className={classes.fragmentLink}>
               Past Work
             </text>
             <text onClick={() => history.push('/portfolio-website/#skills')} className={classes.fragmentLink}>
