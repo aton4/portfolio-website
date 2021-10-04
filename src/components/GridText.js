@@ -1,8 +1,7 @@
 import * as React from 'react'
 import Typography from '@mui/material/Typography'
 
-function GridItem(props) {
-  const { sx, text } = props
+function GridText(props) {
   return (
     <Typography
       variant="h5"
@@ -17,4 +16,4 @@ function GridItem(props) {
   )
 }
 
-export default GridItem
+export default GridText

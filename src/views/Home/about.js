@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
-import { Box } from '@mui/material/'
+import { Box, Typography } from '@mui/material/'
 import portfolioPhoto from '../../images/portfolioPhoto.jpg'
 
 const useStyles = makeStyles((theme) => ({
@@ -76,28 +76,28 @@ function About() {
           backgroundColor: '#1a202c',
         }}
       >
-        <summary className={classes.summary}>
-          <text className={classes.introduction}>
+        <div className={classes.summary}>
+          <div className={classes.introduction}>
             Hi, I'm Andrew Ton.
             <br /> I'm a UCI senior year student, learning full stack software development.
-          </text>
-          <text className={classes.details}>
+          </div>
+          <div className={classes.details}>
             I've worked on the DevOps, Backend, and Frontend sides of web development during the internships I've taken throughout
             my time at UCI. On the Backend, I'm familar with creating GraphQL and RESTful APIs for the frontend to communicate
             with databases such as MongoDB, PostgreSQL, etc. On the Frontend, I'm skilled in using React with
             Javascript/Typescript to create webpages. As for DevOps, I'm mainly experienced with using Docker to build container
             images, saving those images in AWS ECR, then deploying through Kubernetes. Currently, I'm learning to adapt to Amazon
             Elastic Kubernetes Service to maintain clusters and Kubernetes recently removing Docker as a container runtime.
-          </text>
-          <links className={classes.fragmentLinksContainer}>
+          </div>
+          <div className={classes.fragmentLinksContainer}>
             <a href="#contact" className={classes.contactFragmentLink}>
               Contact Me
             </a>
             <a href="#projects" className={classes.workFragmentLink}>
               View My Past Work
             </a>
-          </links>
-        </summary>
+          </div>
+        </div>
         <div className={classes.photoContainer}>
           <img alt="profilePic" className={classes.photo} src={portfolioPhoto} />
         </div>
