@@ -83,42 +83,25 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.5rem',
     lineHeight: 1.625,
   },
-  viewProjects: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '500px 500px',
-    gridGap: '30px',
-    margin: '0px 100px 0px 0px',
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-    justifyItems: 'center',
-  },
-  link: {
-    display: 'flex',
-  },
-  item: {
-    justifyContent: 'center',
-    display: 'flex',
-    width: '100%',
-    '&:hover': {
-      '&>a': {
-        color: 'green',
-        opacity: 0.5,
-      },
-    },
-  },
-  item2: {
+}))
+
+const styles = {
+  project: {
     margin: '0px 20px 0px 20px',
     height: '500px',
     '&:hover': {
-      '&>a': {
-        color: 'green',
-        opacity: 0.5,
-      },
+      cursor: 'pointer',
+      transform: 'scale(1.2)',
+      border: '5px solid blue',
     },
   },
-}))
+  clickedProject: {
+    margin: '0px 20px 0px 20px',
+    height: '500px',
+    transform: 'scale(1.2)',
+    border: '5px solid blue',
+  },
+}
 
 function Projects() {
   const classes = useStyles()
@@ -126,6 +109,13 @@ function Projects() {
     title: 'Project Details',
     description: 'Click on a project on the left to view more details.',
   })
+  const [selectedProject, setSelectedProject] = useState('')
+
+  function handleOnClickProject(event, project) {
+    event.preventDefault()
+    setProjectData({ title: project.title, description: project.description })
+    setSelectedProject(project.title)
+  }
 
   return (
     <section id="projects" className={classes.section}>
@@ -147,23 +137,27 @@ function Projects() {
             marginRight: '4px',
           }}
         >
-          <Grid item xs={5} className={classes.item}>
+          <Grid item xs={5}>
             <div className={classes.projectData}>
               <div className={classes.projectTitle}>{projectData.title}</div>
               <div className={classes.projectDescription}>{projectData.description}</div>
             </div>
           </Grid>
-          <Grid item xs={7} className={classes.item}>
+          <Grid item xs={7}>
             <Grid container gap={7}>
-              {projects.map((project) => (
-                <Grid
-                  item
-                  xs={5}
-                  className={classes.item2}
-                  style={{ backgroundImage: `url(${project.image})` }}
-                  onClick={() => setProjectData({ title: project.title, description: project.description })}
-                />
-              ))}
+              {projects.map((project) => {
+                const projectStyles = project.title === selectedProject ? styles.clickedProject : styles.project
+                return (
+                  <Grid
+                    title={project.title}
+                    item
+                    xs={5}
+                    sx={projectStyles}
+                    style={{ backgroundImage: `url(${project.image})` }}
+                    onClick={(e) => handleOnClickProject(e, project)}
+                  />
+                )
+              })}
             </Grid>
           </Grid>
         </Grid>

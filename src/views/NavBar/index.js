@@ -69,7 +69,7 @@ function NavBar() {
             <Typography
               variant="h5"
               sx={{ marginRight: '1.25rem' }}
-              onClick={() => history.push('/portfolio-website/#work')}
+              onClick={() => history.push('/portfolio-website/#projects')}
               className={classes.fragmentLink}
             >
               Past Work
