@@ -70,7 +70,7 @@ function Contact() {
         }}
       >
         <Map />
-        <Box component="form" sx={{ display: 'grid', justifyItems: 'left' }} onSubmit={handleSubmit}>
+        <Box component="form" sx={{ display: 'grid', justifyItems: 'left' }} onSubmit={handleSubmit} autoComplete="off">
           <Typography variant="h3" sx={{ paddingBottom: 0.3, color: 'white', textAlign: 'center' }}>
             Contact Me
           </Typography>
