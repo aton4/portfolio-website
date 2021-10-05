@@ -7,6 +7,7 @@ import validator from 'validator'
 const useStyles = makeStyles((theme) => ({
   section: {
     paddingTop: '200px',
+    paddingBottom: '300px',
     backgroundColor: '#1a202c',
   },
   contactForm: {
