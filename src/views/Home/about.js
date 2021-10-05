@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import { Box, Typography } from '@mui/material/'
-import portfolioPhoto from '../../images/portfolioPhoto.jpg'
+import portfolioPhoto from '../../media/portfolioPhoto.jpg'
 
 const useStyles = makeStyles((theme) => ({
   summary: {

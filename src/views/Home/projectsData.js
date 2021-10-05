@@ -1,6 +1,6 @@
-import PortfolioSite from '../../images/PortfolioSite.png'
-import ExerTracker from '../../images/ExerTracker.png'
-import ArdentHQ from '../../images/ArdentHQ.png'
+import PortfolioSite from '../../media/PortfolioSite.png'
+import ExerTracker from '../../media/ExerTracker.png'
+import ArdentHQ from '../../media/ArdentHQ.png'
 
 export const projects = [
   {
