@@ -65,7 +65,7 @@ function Contact() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr',
+          gridTemplateColumns: '3fr 2fr',
           gap: theme.gap,
           width: '90%',
           margin: '0 auto 0 auto',
