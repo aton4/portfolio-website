@@ -6,8 +6,9 @@ import { skills } from './skillsData'
 import CheckCircle from '@mui/icons-material/CheckCircle'
 import { screenBreakpoint, customTheme } from '../../theme'
 
+const theme = customTheme[screenBreakpoint]
+
 function Skills() {
-  const theme = customTheme[screenBreakpoint]
   return (
     <section id="skills">
       <Paper sx={{ backgroundColor: '#1a202c' }}>

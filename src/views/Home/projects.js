@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
-import Grid from '@mui/material/Grid'
+import { screenBreakpoint, customTheme } from '../../theme'
+import { Box, Grid, Typography } from '@mui/material'
 import { Code } from '@mui/icons-material'
 import { projects } from './projectsData'
+import ExerTracker from '../../media/ExerTracker.png'
+
+const theme = customTheme[screenBreakpoint]
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -24,17 +28,6 @@ const useStyles = makeStyles((theme) => ({
     '& .Code-icon': {
       fontSize: 4000,
     },
-  },
-  introductionTitle: {
-    color: 'white',
-    fontSize: '3rem',
-    fontWeight: 500,
-    marginBottom: '1rem',
-  },
-  introductionDescription: {
-    margin: '10px 0px 100px 0px',
-    lineHeight: 1.625,
-    fontSize: '1.5rem',
   },
   projectsContainer: {
     display: 'grid',
@@ -62,33 +55,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  projectTitle: {
-    textAlign: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    justifyItems: 'center',
-    color: 'white',
-    fontSize: '2.5rem',
-    lineHeight: 1.625,
-  },
-  projectDescription: {
-    margin: '30px 10px 0px 10px',
-    textAlign: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    justifyItems: 'center',
-    color: '#cbd5e0',
-    fontSize: '1.5rem',
-    lineHeight: 1.625,
-  },
 }))
 
 const styles = {
   project: {
-    margin: '0px 20px 0px 20px',
-    height: '500px',
+    height: theme.projectImage.height,
+    objectFit: 'fill',
     '&:hover': {
       cursor: 'pointer',
       transform: 'scale(1.2)',
@@ -96,10 +68,10 @@ const styles = {
     },
   },
   clickedProject: {
-    margin: '0px 20px 0px 20px',
-    height: '500px',
+    height: theme.projectImage.height,
     transform: 'scale(1.2)',
     border: '5px solid blue',
+    objectFit: 'fill',
   },
 }
 
@@ -107,7 +79,7 @@ function Projects() {
   const classes = useStyles()
   const [projectData, setProjectData] = useState({
     title: 'Project Details',
-    description: 'Click on a project on the left to view more details.',
+    description: 'Click on a project on the right to view more details.',
   })
   const [selectedProject, setSelectedProject] = useState('')
 
@@ -122,10 +94,15 @@ function Projects() {
       <div className={classes.projects}>
         <div className={classes.introduction}>
           <Code className={classes.codeIcon} sx={{ fontSize: 100 }} />
-          <div className={classes.introductionTitle}>Apps I've Built</div>
-          <div className={classes.introductionDescription}>
+          <Typography variant="h3" sx={{ ...theme.header1, marginBottom: '1rem', color: 'white', textAlign: 'left' }}>
+            Apps I've Built
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{ ...theme.header3, margin: '10px 0px 100px 0px', lineHeight: 1.625, color: '#cbd5e0', textAlign: 'center' }}
+          >
             These are the various web applications that I've created so far, mainly using React and Node.js
-          </div>
+          </Typography>
         </div>
         <Grid
           container
@@ -139,26 +116,62 @@ function Projects() {
         >
           <Grid item xs={5}>
             <div className={classes.projectData}>
-              <div className={classes.projectTitle}>{projectData.title}</div>
-              <div className={classes.projectDescription}>{projectData.description}</div>
+              <Typography
+                variant="h3"
+                sx={{
+                  textAlign: 'center',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  justifyItems: 'center',
+                  color: 'white',
+                  fontSize: theme.header2,
+                  lineHeight: 1.625,
+                }}
+              >
+                {projectData.title}
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{
+                  margin: '30px 10px 0px 10px',
+                  textAlign: 'center',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  justifyItems: 'center',
+                  color: '#cbd5e0',
+                  ...theme.header3,
+                  lineHeight: 1.625,
+                }}
+              >
+                {projectData.description}
+              </Typography>
             </div>
           </Grid>
           <Grid item xs={7}>
-            <Grid container gap={7}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: theme.gap,
+                width: '100%',
+                alignItems: 'right',
+              }}
+            >
               {projects.map((project) => {
                 const projectStyles = project.title === selectedProject ? styles.clickedProject : styles.project
                 return (
-                  <Grid
+                  <img
                     title={project.title}
-                    item
-                    xs={5}
-                    sx={projectStyles}
-                    style={{ backgroundImage: `url(${project.image})` }}
+                    style={projectStyles}
+                    src={project.image}
+                    alt="test"
                     onClick={(e) => handleOnClickProject(e, project)}
                   />
                 )
               })}
-            </Grid>
+            </Box>
           </Grid>
         </Grid>
       </div>

@@ -17,7 +17,6 @@ function Home() {
 
   return (
     <span className={classes.root}>
-      <About />
       <Projects />
       <Skills />
       <Contact />

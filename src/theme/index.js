@@ -24,7 +24,7 @@ if (innerWidth < 300) {
   screenBreakpoint = 'sm'
 } else if (innerWidth < 901) {
   screenBreakpoint = 'md'
-} else if (innerWidth < 1501) {
+} else if (innerWidth < 1601) {
   screenBreakpoint = 'lg'
 } else {
   screenBreakpoint = 'xl'
@@ -37,7 +37,7 @@ const customTheme = {
       fontSize: '3rem',
     },
     header2: {
-      fontSize: '1.835rem',
+      fontSize: '2rem',
     },
     header3: {
       fontSize: '1.5rem',
@@ -45,8 +45,14 @@ const customTheme = {
     textInput: {
       fontSize: '1.3rem',
     },
+    projectImage: {
+      height: '25rem',
+    },
+    icon: {
+      fontSize: 'large',
+    },
     margin: '0 auto 0 auto',
-    gap: 5,
+    gap: 7,
     pl: 3,
     pt: 2.5,
     pb: 2.5,
@@ -65,8 +71,14 @@ const customTheme = {
     textInput: {
       fontSize: '1.1rem',
     },
+    projectImage: {
+      height: '15rem',
+    },
+    icon: {
+      fontSize: 'large',
+    },
     margin: '0 auto 0 auto',
-    gap: 5,
+    gap: 6,
     pl: 3,
     pt: 2.5,
     pb: 2.5,
@@ -84,6 +96,12 @@ const customTheme = {
     },
     textInput: {
       fontSize: '0.6rem',
+    },
+    projectImage: {
+      height: '10rem',
+    },
+    icon: {
+      fontSize: 'medium',
     },
     margin: '0 auto 0 auto',
     gap: 4,
@@ -104,6 +122,9 @@ const customTheme = {
     },
     textInput: {
       fontSize: '0.4rem',
+    },
+    projectImage: {
+      height: '5.5rem',
     },
     icon: {
       fontSize: 'small',
@@ -127,6 +148,9 @@ const customTheme = {
     },
     textInput: {
       fontSize: '0.2rem',
+    },
+    projectImage: {
+      height: '4rem',
     },
     icon: {
       fontSize: 'small',

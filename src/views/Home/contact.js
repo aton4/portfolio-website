@@ -5,6 +5,8 @@ import { Box, Button, TextField, Typography } from '@mui/material/'
 import validator from 'validator'
 import { screenBreakpoint, customTheme } from '../../theme'
 
+const theme = customTheme[screenBreakpoint]
+
 const useStyles = makeStyles((theme) => ({
   section: {
     paddingTop: '200px',
@@ -26,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function Contact() {
-  const theme = customTheme[screenBreakpoint]
   const classes = useStyles()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
