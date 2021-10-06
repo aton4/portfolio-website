@@ -7,7 +7,7 @@ function Documents() {
       src="https://drive.google.com/file/d/1JZQ1DMF6Xv6ZkpSTFX8UVuJr5Jg84ylY/preview"
       type="application/pdf"
       width="100%"
-      height="95%"
+      height="100%"
       autoplay="true"
     />
   )
