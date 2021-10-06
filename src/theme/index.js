@@ -86,7 +86,7 @@ const customTheme = {
   },
   md: {
     header1: {
-      fontSize: '2rem',
+      fontSize: '1.3rem',
     },
     header2: {
       fontSize: '1.235rem',
@@ -112,7 +112,7 @@ const customTheme = {
   },
   sm: {
     header1: {
-      fontSize: '1.5rem',
+      fontSize: '1.2rem',
     },
     header2: {
       fontSize: '0.935rem',
