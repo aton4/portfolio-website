@@ -43,7 +43,7 @@ const customTheme = {
       fontSize: '1.5rem',
     },
     textInput: {
-      fontSize: '1.3rem',
+      fontSize: '1.2rem',
     },
     projectImage: {
       height: '25rem',
@@ -69,7 +69,7 @@ const customTheme = {
       fontSize: '1.3rem',
     },
     textInput: {
-      fontSize: '1.1rem',
+      fontSize: '1rem',
     },
     projectImage: {
       height: '15rem',
@@ -95,7 +95,7 @@ const customTheme = {
       fontSize: '0.8rem',
     },
     textInput: {
-      fontSize: '0.6rem',
+      fontSize: '0.7rem',
     },
     projectImage: {
       height: '10rem',
@@ -118,10 +118,10 @@ const customTheme = {
       fontSize: '0.935rem',
     },
     header3: {
-      fontSize: '0.5rem',
+      fontSize: '0.6rem',
     },
     textInput: {
-      fontSize: '0.4rem',
+      fontSize: '0.5rem',
     },
     projectImage: {
       height: '5.5rem',
@@ -144,10 +144,10 @@ const customTheme = {
       fontSize: '0.635rem',
     },
     header3: {
-      fontSize: '0.3rem',
+      fontSize: '0.5rem',
     },
     textInput: {
-      fontSize: '0.2rem',
+      fontSize: '0.4rem',
     },
     projectImage: {
       height: '4rem',

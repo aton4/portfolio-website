@@ -65,7 +65,7 @@ function Contact() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr',
+          gridTemplateColumns: '3fr 2fr',
           gap: theme.gap,
           width: '90%',
           margin: '0 auto 0 auto',
@@ -87,7 +87,8 @@ function Contact() {
           <TextField
             variant="filled"
             color="secondary"
-            inputProps={{ style: { ...theme.header3, color: 'white' } }}
+            inputProps={{ style: { ...theme.textInput, color: 'white' } }}
+            FormHelperTextProps={{ style: { ...theme.textInput } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setName(e.target.value)}
             onKeyPress={(e) => {
@@ -104,7 +105,8 @@ function Contact() {
             helperText={emailError}
             mb={5}
             color="secondary"
-            inputProps={{ style: { ...theme.header3, color: 'white' } }}
+            inputProps={{ style: { ...theme.textInput, color: 'white' } }}
+            FormHelperTextProps={{ style: { ...theme.textInput } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setEmail(e.target.value)}
             onKeyPress={(e) => {
@@ -121,7 +123,8 @@ function Contact() {
             helperText={messageError}
             mb={5}
             color="secondary"
-            inputProps={{ style: { ...theme.header3, color: 'white' } }}
+            inputProps={{ style: { ...theme.textInput, color: 'white' } }}
+            FormHelperTextProps={{ style: { ...theme.textInput } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setMessage(e.target.value)}
             onKeyPress={(e) => {

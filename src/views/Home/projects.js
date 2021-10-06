@@ -4,7 +4,6 @@ import { screenBreakpoint, customTheme } from '../../theme'
 import { Box, Grid, Typography } from '@mui/material'
 import { Code } from '@mui/icons-material'
 import { projects } from './projectsData'
-import ExerTracker from '../../media/ExerTracker.png'
 
 const theme = customTheme[screenBreakpoint]
 
