@@ -61,7 +61,7 @@ const styles = {
   project: {
     width: '100%',
     height: theme.projectImage.height,
-    objectFit: 'fill',
+    objectFit: 'contain',
     '&:hover': {
       cursor: 'pointer',
       transform: 'scale(1.2)',
