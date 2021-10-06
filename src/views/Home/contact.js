@@ -3,6 +3,9 @@ import { makeStyles } from '@mui/styles'
 import Map from '../../components/Map'
 import { Box, Button, TextField, Typography } from '@mui/material/'
 import validator from 'validator'
+import { screenBreakpoint, customTheme } from '../../theme'
+
+const theme = customTheme[screenBreakpoint]
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -62,8 +65,8 @@ function Contact() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: '65% 35%',
-          gap: 5,
+          gridTemplateColumns: '2fr 1fr',
+          gap: theme.gap,
           width: '90%',
           margin: '0 auto 0 auto',
           textAlign: 'center',
@@ -72,19 +75,19 @@ function Contact() {
       >
         <Map />
         <Box component="form" sx={{ display: 'grid', justifyItems: 'left' }} onSubmit={handleSubmit} autoComplete="off">
-          <Typography variant="h3" sx={{ paddingBottom: 0.3, color: 'white', textAlign: 'center' }}>
+          <Typography variant="h3" sx={{ ...theme.header1, paddingBottom: 0.3, color: 'white', textAlign: 'left' }}>
             Contact Me
           </Typography>
-          <Typography variant="h5" sx={{ paddingBottom: 3, color: '#cbd5e0', textAlign: 'center' }}>
+          <Typography variant="h5" sx={{ ...theme.header3, paddingBottom: 3, color: '#cbd5e0', textAlign: 'left' }}>
             Send a message to my email, aton4@uci.edu, below!
           </Typography>
-          <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }}>
+          <Typography variant="h5" sx={{ ...theme.header3, color: '#cbd5e0', textAlign: 'left' }}>
             Name (optional)
           </Typography>
           <TextField
             variant="filled"
             color="secondary"
-            inputProps={{ style: { fontSize: 20, color: 'white' } }}
+            inputProps={{ style: { ...theme.header3, color: 'white' } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setName(e.target.value)}
             onKeyPress={(e) => {
@@ -92,7 +95,7 @@ function Contact() {
             }}
             fullWidth
           />
-          <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }} onChange={handleEmailChange}>
+          <Typography variant="h5" sx={{ ...theme.header3, color: '#cbd5e0', textAlign: 'left' }} onChange={handleEmailChange}>
             Email
           </Typography>
           <TextField
@@ -101,7 +104,7 @@ function Contact() {
             helperText={emailError}
             mb={5}
             color="secondary"
-            inputProps={{ style: { fontSize: 20, color: 'white' } }}
+            inputProps={{ style: { ...theme.header3, color: 'white' } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setEmail(e.target.value)}
             onKeyPress={(e) => {
@@ -109,7 +112,7 @@ function Contact() {
             }}
             fullWidth
           />
-          <Typography variant="h5" sx={{ color: '#cbd5e0', textAlign: 'center' }}>
+          <Typography variant="h5" sx={{ ...theme.header3, color: '#cbd5e0', textAlign: 'left' }}>
             Message
           </Typography>
           <TextField
@@ -118,7 +121,7 @@ function Contact() {
             helperText={messageError}
             mb={5}
             color="secondary"
-            inputProps={{ style: { fontSize: 20, color: 'white' } }}
+            inputProps={{ style: { ...theme.header3, color: 'white' } }}
             sx={{ marginTop: 1, marginBottom: 5, backgroundColor: '#2d3748', color: 'white', borderRadius: '0.25rem' }}
             onInput={(e) => setMessage(e.target.value)}
             onKeyPress={(e) => {
@@ -126,7 +129,7 @@ function Contact() {
             }}
             fullWidth
           />
-          <Button sx={{ fontSize: 20, backgroundColor: '#48bb78', color: 'primary', justifySelf: 'center' }} type="submit">
+          <Button sx={{ ...theme.header3, backgroundColor: '#48bb78', color: 'primary', justifySelf: 'center' }} type="submit">
             Send
           </Button>
         </Box>

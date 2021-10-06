@@ -2,6 +2,9 @@ import * as React from 'react'
 import { CssBaseline, AppBar, Toolbar, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { useHistory, Link } from 'react-router-dom'
+import { screenBreakpoint, customTheme } from '../../theme'
+
+const theme = customTheme[screenBreakpoint]
 
 const useStyles = makeStyles((theme) => ({
   navBar: {
@@ -55,11 +58,11 @@ function NavBar() {
   return (
     <span>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ backgroundColor: '#2d3748' }}>
+      <AppBar position="sticky" sx={{ backgroundColor: '#2d3748' }}>
         <Toolbar>
           <Typography
             variant="h4"
-            sx={{ margin: '1rem 0.9rem 1rem 3rem' }}
+            sx={{ ...theme.header2, margin: '1rem 0.9rem 1rem 2rem' }}
             onClick={() => {
               new Promise((resolve) => {
                 setTimeout(() => {
@@ -74,7 +77,7 @@ function NavBar() {
           <nav className={classes.fragmentContainer}>
             <Typography
               variant="h5"
-              sx={{ marginRight: '1.25rem' }}
+              sx={{ ...theme.header3, marginRight: '1.25rem' }}
               onClick={() => {
                 new Promise((resolve) => {
                   setTimeout(() => {
@@ -88,7 +91,7 @@ function NavBar() {
             </Typography>
             <Typography
               variant="h5"
-              sx={{ marginRight: '1.25rem' }}
+              sx={{ ...theme.header3, marginRight: '1.25rem' }}
               onClick={() => {
                 new Promise((resolve) => {
                   setTimeout(() => {
@@ -102,7 +105,7 @@ function NavBar() {
             </Typography>
             <Typography
               variant="h5"
-              sx={{ marginRight: '1.25rem' }}
+              sx={{ ...theme.header3, marginRight: '1.25rem' }}
               onClick={() => {
                 new Promise((resolve) => {
                   setTimeout(() => {
@@ -115,8 +118,23 @@ function NavBar() {
               Contact
             </Typography>
           </nav>
-          <Link to="/portfolio-website/documents" className={classes.documentsLink}>
-            Documents
+          <Link to="/portfolio-website/documents">
+            <Typography
+              variant="h5"
+              sx={{
+                ...theme.header3,
+                marginRight: '1rem',
+                flexWrap: 'wrap',
+                color: '#cccccc',
+                float: 'right',
+                textDecoration: 'none',
+                '&:hover': {
+                  color: 'white',
+                },
+              }}
+            >
+              Documents
+            </Typography>
           </Link>
         </Toolbar>
       </AppBar>

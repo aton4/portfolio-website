@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material/styles'
-import theme from './theme'
+import { theme } from './theme'
 import NavBar from './views/NavBar'
 import Home from './views/Home'
 import Documents from './views/Documents'
