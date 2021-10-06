@@ -55,7 +55,7 @@ function NavBar() {
   return (
     <span>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ backgroundColor: '#2d3748' }}>
+      <AppBar position="sticky" sx={{ backgroundColor: '#2d3748' }}>
         <Toolbar>
           <Typography
             variant="h4"
