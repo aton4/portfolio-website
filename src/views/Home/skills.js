@@ -4,19 +4,21 @@ import GridText from '../../components/GridText'
 import { Paper, Box, Typography } from '@mui/material/'
 import { skills } from './skillsData'
 import CheckCircle from '@mui/icons-material/CheckCircle'
+import { screenBreakpoint, customTheme } from '../../theme'
 
 function Skills() {
+  const theme = customTheme[screenBreakpoint]
   return (
     <section id="skills">
       <Paper sx={{ backgroundColor: '#1a202c' }}>
-        <Typography variant="h3" pt={20} pb={10} sx={{ color: 'white', textAlign: 'center' }}>
+        <Typography variant="h3" pt={20} pb={10} sx={{ ...theme.header1, color: 'white', textAlign: 'center' }}>
           Skills & Technologies
         </Typography>
         <Box
           sx={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: 5,
+            gap: theme.gap,
             width: '50%',
             margin: '0 auto 0 auto',
             textAlign: 'center',
@@ -26,7 +28,10 @@ function Skills() {
           {skills.map((skill) => (
             <GridItem>
               <Box
-                pl={3}
+                pt={theme.pt}
+                pb={theme.pt}
+                pl={theme.pl}
+                pr={theme.pr}
                 sx={{
                   alignContent: 'center',
                   alignItems: 'center',
@@ -35,8 +40,8 @@ function Skills() {
                   display: 'flex',
                 }}
               >
-                <CheckCircle sx={{ color: '#66ff66' }} />
-                <GridText text={skill.name} />
+                <CheckCircle sx={{ fontSize: 'large', color: '#66ff66' }} />
+                <GridText sx={{ ...theme.header3 }} text={skill.name} />
               </Box>
             </GridItem>
           ))}
