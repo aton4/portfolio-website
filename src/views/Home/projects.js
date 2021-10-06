@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 const styles = {
   project: {
+    width: '100%',
     height: theme.projectImage.height,
     objectFit: 'fill',
     '&:hover': {
@@ -68,10 +69,11 @@ const styles = {
     },
   },
   clickedProject: {
+    width: '100%',
     height: theme.projectImage.height,
     transform: 'scale(1.2)',
     border: '5px solid blue',
-    objectFit: 'fill',
+    objectFit: 'contain',
   },
 }
 
@@ -155,7 +157,7 @@ function Projects() {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
                 gap: theme.gap,
-                width: '100%',
+                width: '90%',
                 alignItems: 'right',
               }}
             >
