@@ -67,9 +67,10 @@ function About() {
             I've worked on the DevOps, Backend, and Frontend sides of web development during the internships I've taken throughout
             my time at UCI. On the Backend, I'm familar with creating GraphQL and RESTful APIs for the frontend to communicate
             with databases such as MongoDB, PostgreSQL, etc. On the Frontend, I'm skilled in using React with
-            Javascript/Typescript to create webpages. As for DevOps, I'm mainly experienced with using Docker to build container
-            images, saving those images in AWS ECR, then deploying through Kubernetes. Currently, I'm learning to adapt to Amazon
-            Elastic Kubernetes Service to maintain clusters and Kubernetes recently removing Docker as a container runtime.
+            Javascript/Typescript to create webpages, looking into learning .NET framework on the side. As for DevOps, I'm mainly
+            experienced with using Docker to build container images, saving those images in AWS ECR, then deploying through
+            Kubernetes. Currently, I'm learning to adapt to Amazon Elastic Kubernetes Service to maintain clusters and Kubernetes
+            recently removing Docker as a container runtime.
           </Typography>
           <div className={classes.fragmentLinksContainer}>
             <a href="#contact" className={classes.contactFragmentLink}>
