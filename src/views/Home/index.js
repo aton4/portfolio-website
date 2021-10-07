@@ -1,6 +1,8 @@
 import React from 'react'
-import About from '../About'
-import Contact from '../Contact'
+import About from './about'
+import Projects from './projects'
+import Skills from './skills'
+import Contact from './contact'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,10 +16,12 @@ function Home() {
   const classes = useStyles()
 
   return (
-    <home className={classes.root}>
+    <span className={classes.root}>
       <About />
+      <Projects />
+      <Skills />
       <Contact />
-    </home>
+    </span>
   )
 }
 
