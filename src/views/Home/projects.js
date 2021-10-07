@@ -164,10 +164,9 @@ function Projects() {
                 const projectStyles = project.title === selectedProject ? styles.clickedProject : styles.project
                 return (
                   <img
-                    title={project.title}
+                    alt={project.title}
                     style={projectStyles}
                     src={project.image}
-                    alt="test"
                     onClick={(e) => handleOnClickProject(e, project)}
                   />
                 )
