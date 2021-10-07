@@ -118,7 +118,7 @@ function NavBar() {
               Contact
             </Typography>
           </nav>
-          <Link to="https://www.linkedin.com/in/andrew-ton-072328196/">
+          <a href="https://www.linkedin.com/in/andrew-ton-072328196/">
             <Typography
               variant="h5"
               sx={{
@@ -135,7 +135,7 @@ function NavBar() {
             >
               LinkedIn
             </Typography>
-          </Link>
+          </a>
           <Link to="/portfolio-website/documents">
             <Typography
               variant="h5"
