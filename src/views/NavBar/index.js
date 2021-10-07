@@ -118,6 +118,24 @@ function NavBar() {
               Contact
             </Typography>
           </nav>
+          <Link to="https://www.linkedin.com/in/andrew-ton-072328196/">
+            <Typography
+              variant="h5"
+              sx={{
+                ...theme.header3,
+                marginRight: '1rem',
+                flexWrap: 'wrap',
+                color: '#cccccc',
+                float: 'right',
+                textDecoration: 'none',
+                '&:hover': {
+                  color: 'white',
+                },
+              }}
+            >
+              LinkedIn
+            </Typography>
+          </Link>
           <Link to="/portfolio-website/documents">
             <Typography
               variant="h5"
