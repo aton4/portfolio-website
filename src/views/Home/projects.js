@@ -61,17 +61,12 @@ const styles = {
     width: '100%',
     height: theme.projectImage.height,
     objectFit: 'contain',
-    '&:hover': {
-      cursor: 'pointer',
-      transform: 'scale(1.2)',
-      border: '5px solid blue',
-    },
   },
   clickedProject: {
     width: '100%',
     height: theme.projectImage.height,
     transform: 'scale(1.2)',
-    border: '5px solid blue',
+    border: '5px solid cyan',
     objectFit: 'contain',
   },
 }
@@ -163,12 +158,21 @@ function Projects() {
               {projects.map((project) => {
                 const projectStyles = project.title === selectedProject ? styles.clickedProject : styles.project
                 return (
-                  <img
-                    alt={project.title}
-                    style={projectStyles}
-                    src={project.image}
-                    onClick={(e) => handleOnClickProject(e, project)}
-                  />
+                  <Box
+                    sx={{
+                      '&:hover': {
+                        cursor: 'pointer',
+                        border: project.title !== selectedProject ? '5px solid white' : null,
+                      },
+                    }}
+                  >
+                    <img
+                      alt={project.title}
+                      style={projectStyles}
+                      src={project.image}
+                      onClick={(e) => handleOnClickProject(e, project)}
+                    />
+                  </Box>
                 )
               })}
             </Box>
