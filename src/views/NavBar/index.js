@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-// <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+
 function NavBar() {
   const classes = useStyles()
   const history = useHistory()
