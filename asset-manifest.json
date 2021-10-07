@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/portfolio-website/static/js/main.1a37fadc.chunk.js",
-    "main.js.map": "/portfolio-website/static/js/main.1a37fadc.chunk.js.map",
+    "main.js": "/portfolio-website/static/js/main.544e883f.chunk.js",
+    "main.js.map": "/portfolio-website/static/js/main.544e883f.chunk.js.map",
     "runtime-main.js": "/portfolio-website/static/js/runtime-main.1c3a88a2.js",
     "runtime-main.js.map": "/portfolio-website/static/js/runtime-main.1c3a88a2.js.map",
-    "static/js/2.209841a2.chunk.js": "/portfolio-website/static/js/2.209841a2.chunk.js",
-    "static/js/2.209841a2.chunk.js.map": "/portfolio-website/static/js/2.209841a2.chunk.js.map",
+    "static/js/2.9de0c1c0.chunk.js": "/portfolio-website/static/js/2.9de0c1c0.chunk.js",
+    "static/js/2.9de0c1c0.chunk.js.map": "/portfolio-website/static/js/2.9de0c1c0.chunk.js.map",
     "index.html": "/portfolio-website/index.html",
-    "static/js/2.209841a2.chunk.js.LICENSE.txt": "/portfolio-website/static/js/2.209841a2.chunk.js.LICENSE.txt",
+    "static/js/2.9de0c1c0.chunk.js.LICENSE.txt": "/portfolio-website/static/js/2.9de0c1c0.chunk.js.LICENSE.txt",
     "static/media/ArdentHQ.1f1a173a.png": "/portfolio-website/static/media/ArdentHQ.1f1a173a.png",
     "static/media/ExerTracker.0c1d71a8.png": "/portfolio-website/static/media/ExerTracker.0c1d71a8.png",
     "static/media/PortfolioSite.7b0d9553.png": "/portfolio-website/static/media/PortfolioSite.7b0d9553.png",
-    "static/media/portfolioPhoto.6f76e3f1.jpg": "/portfolio-website/static/media/portfolioPhoto.6f76e3f1.jpg"
+    "static/media/portfolioPhoto.8dd5bb2c.png": "/portfolio-website/static/media/portfolioPhoto.8dd5bb2c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.1c3a88a2.js",
-    "static/js/2.209841a2.chunk.js",
-    "static/js/main.1a37fadc.chunk.js"
+    "static/js/2.9de0c1c0.chunk.js",
+    "static/js/main.544e883f.chunk.js"
   ]
 }
