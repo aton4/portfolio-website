@@ -6,29 +6,15 @@ import validator from 'validator'
 import { screenBreakpoint, customTheme } from '../../theme'
 
 const theme = customTheme[screenBreakpoint]
-
-const useStyles = makeStyles((theme) => ({
+const styles = {
   section: {
-    paddingTop: '200px',
-    paddingBottom: '300px',
+    paddingTop: theme.sectionTop,
+    paddingBottom: theme.sectionBottom,
     backgroundColor: '#1a202c',
   },
-  contactForm: {
-    display: 'grid',
-    width: '100%',
-    justifyContent: 'left',
-    justifyItems: 'left',
-  },
-  formText: {
-    color: 'white',
-  },
-  forma: {
-    color: 'white',
-  },
-}))
+}
 
 function Contact() {
-  const classes = useStyles()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState('')
@@ -61,7 +47,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className={classes.section}>
+    <section id="contact" style={styles.section}>
       <Box
         sx={{
           display: 'grid',
@@ -132,7 +118,10 @@ function Contact() {
             }}
             fullWidth
           />
-          <Button sx={{ ...theme.header3, backgroundColor: '#48bb78', color: 'primary', justifySelf: 'center' }} type="submit">
+          <Button
+            sx={{ ...theme.header3, backgroundColor: '#48bb78', textTransform: 'none', color: 'primary', justifySelf: 'center' }}
+            type="submit"
+          >
             Send
           </Button>
         </Box>

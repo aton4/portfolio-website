@@ -8,11 +8,6 @@ import { projects } from './projectsData'
 const theme = customTheme[screenBreakpoint]
 
 const useStyles = makeStyles((theme) => ({
-  section: {
-    width: '100%',
-    backgroundColor: '#1a202c',
-    color: '#cbd5e0',
-  },
   projects: {
     width: '100%',
   },
@@ -23,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   codeIcon: {
-    margin: '250px 0px 0px 0px',
     '& .Code-icon': {
       fontSize: 4000,
     },
@@ -57,6 +51,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const styles = {
+  section: {
+    width: '100%',
+    paddingTop: theme.sectionTop,
+    backgroundColor: '#1a202c',
+    color: '#cbd5e0',
+  },
   project: {
     width: '100%',
     height: theme.projectImage.height,
@@ -91,7 +91,7 @@ function Projects() {
   }
 
   return (
-    <section id="projects" className={classes.section}>
+    <section id="projects" style={styles.section}>
       <div className={classes.projects}>
         <div className={classes.introduction}>
           <Code className={classes.codeIcon} sx={{ fontSize: 100 }} />

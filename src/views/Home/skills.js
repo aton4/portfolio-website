@@ -12,7 +12,11 @@ function Skills() {
   return (
     <section id="skills">
       <Paper sx={{ backgroundColor: '#1a202c' }}>
-        <Typography variant="h3" pt={20} pb={10} sx={{ ...theme.header1, color: 'white', textAlign: 'center' }}>
+        <Typography
+          variant="h3"
+          pb={10}
+          sx={{ ...theme.header1, paddingTop: theme.sectionTop, color: 'white', textAlign: 'center' }}
+        >
           Skills & Technologies
         </Typography>
         <Box
@@ -42,7 +46,7 @@ function Skills() {
                 }}
               >
                 <CheckCircle sx={{ fontSize: 'large', color: '#66ff66' }} />
-                <GridText sx={{ ...theme.header3 }} text={skill.name} />
+                <GridText sx={{ ...theme.header3, paddingLeft: theme.pl / 2 }} text={skill.name} />
               </Box>
             </GridItem>
           ))}
