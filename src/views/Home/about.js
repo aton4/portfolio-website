@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import { Box, Typography } from '@mui/material/'
-import portfolioPhoto from '../../media/portfolioPhoto.jpg'
+import portfolioPhoto from '../../media/portfolioPhoto.png'
 import { screenBreakpoint, customTheme } from '../../theme'
 
 const theme = customTheme[screenBreakpoint]
