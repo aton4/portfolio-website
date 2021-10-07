@@ -115,7 +115,7 @@ function About() {
           </div>
         </div>
         <div className={classes.photoContainer}>
-          <img alt="A photograph of myself" style={styles.photo} src={portfolioPhoto} />
+          <img alt="Andrew Ton" style={styles.photo} src={portfolioPhoto} />
         </div>
       </Box>
     </section>
